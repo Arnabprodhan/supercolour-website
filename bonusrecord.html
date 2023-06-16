@@ -1,15 +1,15 @@
-<?php 
+<?html
 ob_start();
 session_start();
 if($_SESSION['frontuserid']=="")
-{header("location:login.php");exit();}?>
+{header("location:login.html");exit();}?>
 
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<?php include'head.php' ?>
+<?html include'head.html' ?>
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -48,8 +48,8 @@ box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 
 </head>
 
 <body>
-<?php
-include("include/connection.php");
+<?html
+include("include/connection.html");
 $userid=$_SESSION['frontuserid'];
 ?>
 <!-- Page loading -->
@@ -70,9 +70,9 @@ $userid=$_SESSION['frontuserid'];
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="promotionrecord.php">Promotion Record</a>
-    <a class="dropdown-item" href="bonusrecord.php">Bonus Record</a>
-    <a class="dropdown-item" href="promotionApplyrecord.php">Apply Record</a>
+    <a class="dropdown-item" href="promotionrecord.html">Promotion Record</a>
+    <a class="dropdown-item" href="bonusrecord.html">Bonus Record</a>
+    <a class="dropdown-item" href="promotionApplyrecord.html">Apply Record</a>
   </div>
 </div>
   </div>
@@ -107,7 +107,7 @@ $userid=$_SESSION['frontuserid'];
       <tr style="display:none;"><th></th><th></th></tr>
       </thead>
       <tbody>
-      <?php
+      <?html
 	  @$userid=$_SESSION['frontuserid'];
       $summery=mysqli_query($con,"select * from `tbl_bonussummery` where `level1id`='".$userid."' order by id desc");
 	  $summeryRows=mysqli_num_rows($summery);
@@ -125,12 +125,12 @@ $post_date = $summeryResult['createdate'];
               <i class="icon ion-logo-usd"></i> 
               </div>
             </div>
-            <div class="text"><div><strong>Bonus</strong><small><?php echo $convert;?></small></div></div>
+            <div class="text"><div><strong>Bonus</strong><small><?html echo $convert;?></small></div></div>
             </div>
             </td>
-          <td class="tdtext">+<?php echo ($summeryResult['level1amount']);?></td>
+          <td class="tdtext">+<?html echo ($summeryResult['level1amount']);?></td>
         </tr>
-        <?php }}else{?>
+        <?html }}else{?>
         <tr>
           <td colspan="2">
           <div class="listItem">
@@ -139,7 +139,7 @@ $post_date = $summeryResult['createdate'];
             </td>
           
         </tr>
-        <?php }?>
+        <?html }?>
       </tbody>
     </table>
     </div>
@@ -159,7 +159,7 @@ $post_date = $summeryResult['createdate'];
       <tr style="display:none;"><th></th><th></th></tr>
       </thead>
       <tbody>
-      <?php
+      <?html
 	  @$userid=$_SESSION['frontuserid'];
       $summery=mysqli_query($con,"select * from `tbl_bonussummery` where `level2id`='".$userid."' order by id desc");
 	  $summeryRows=mysqli_num_rows($summery);
@@ -177,12 +177,12 @@ $post_date = $summeryResult['createdate'];
               <i class="icon ion-logo-usd"></i> 
               </div>
             </div>
-            <div class="text"><div><strong>Period:<?php echo $summeryResult['periodid'];?></strong><small><?php echo $convert;?></small></div></div>
+            <div class="text"><div><strong>Period:<?html echo $summeryResult['periodid'];?></strong><small><?html echo $convert;?></small></div></div>
             </div>
             </td>
-          <td class="tdtext">+<?php echo ($summeryResult['level2amount']);?></td>
+          <td class="tdtext">+<?html echo ($summeryResult['level2amount']);?></td>
         </tr>
-        <?php }}else{?>
+        <?html }}else{?>
         <tr>
           <td colspan="2">
           <div class="listItem">
@@ -191,7 +191,7 @@ $post_date = $summeryResult['createdate'];
             </td>
           
         </tr>
-        <?php }?>
+        <?html }?>
       </tbody>
     </table>
     </div>
@@ -207,7 +207,7 @@ $post_date = $summeryResult['createdate'];
 </div>
 <!-- appCapsule -->
 
-<?php include("include/footer.php");?>
+<?php include("include/footer.html");?>
 
 
 <script src="assets/js/lib/jquery-3.4.1.min.js"></script> 
