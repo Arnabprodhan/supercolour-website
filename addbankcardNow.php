@@ -1,7 +1,7 @@
-<?php 
+<?html 
 ob_start();
 session_start();
-include("include/connection.php");
+include("include/connection.html");
 
 @$userid=$_POST['userid'];
 @$name=$_POST['name'];
