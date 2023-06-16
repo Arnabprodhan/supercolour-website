@@ -1,15 +1,15 @@
-<?php 
+<?html 
 ob_start();
 session_start();
 if($_SESSION['frontuserid']=="")
-{header("location:login.php");exit();}?>
+{header("location:login.html");exit();}?>
 
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<?php include'head.php' ?>
+<?html include'head.html' ?>
 
 <link rel="stylesheet" href="assets/css/style.css">
 
@@ -47,8 +47,8 @@ if($_SESSION['frontuserid']=="")
 </head>
 
 <body>
-<?php 
-include("include/connection.php");
+<?html 
+include("include/connection.html");
 $userid=$_SESSION['frontuserid'];?>
 <!-- Page loading -->
 <div class="loading" id="loading">
@@ -104,7 +104,7 @@ $userid=$_SESSION['frontuserid'];?>
 </div>
 <!-- appCapsule -->
 
-<?php include("include/footer.php");?>
+<?html include("include/footer.html");?>
 <div id="alert" class="modal fade" role="dialog">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
