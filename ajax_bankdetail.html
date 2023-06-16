@@ -1,5 +1,5 @@
-<?php
-include ("include/connection.php");
+<?html
+include ("include/connection.html");
 if($_POST['userid'])
 {
  $userid=$_POST['userid'];
@@ -17,8 +17,8 @@ $data=$row['bankname'];
 $account=$row['account'];
 if($type=='bank'){$a=$account;}else{$a=$data;}
 ?>
-<option style="font-size:14px;" value="<?php echo $id;?>"><?php echo $a;?></option>
-<?php
+<option style="font-size:14px;" value="<?html echo $id;?>"><?html echo $a;?></option>
+<?html
 }}else{
 $id='';
 $data='Not found';
